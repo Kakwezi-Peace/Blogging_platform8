@@ -1,7 +1,104 @@
-### Blogging Platform (Spring Boot + GraphQL + REST)
 
-## Overview
-This project is a Java Spring Boot blogging platform that supports both REST APIs and GraphQL endpoints.
+# **Blogging Platform Advanced Optimization Lab 8**
+
+# Overview
+# **# part 1**
+
+This lab focuses on improving the performance and scalability of the Blogging Platform backend.
+The work includes profiling, asynchronous programming, concurrency control, and algorithmic optimization to ensure the system remains responsive under high load.
+
+# **Objectives**
+
+Implement asynchronous request handling with @Async, CompletableFuture, and ExecutorService
+
+Identify and resolve performance bottlenecks using profiling tools
+
+Apply concurrency and thread safety techniques with thread‑safe collections and tuned thread pools
+
+Optimize data retrieval, sorting, and caching for high‑traffic endpoints
+
+Collect and report runtime metrics to validate improvements
+
+### Epics & User Stories
+
+Epic 1: Performance Bottleneck Analysis
+Profile APIs (post retrieval, comments, analytics)
+
+Record baseline CPU, memory, and latency metrics
+
+Produce a bottleneck report with findings/screenshots
+
+### Epic 2: Asynchronous Programming
+
+Refactor long‑running operations (analytics, feed aggregation, notifications)
+
+Configure thread pools for optimal concurrency
+
+Validate responsiveness under concurrent requests
+
+### Epic 3: Concurrency & Thread Safety
+
+Use ConcurrentHashMap, CopyOnWriteArrayList, or synchronization primitives
+
+Tune thread pools for throughput without resource overload
+
+Verify no race conditions or data corruption
+
+### Epic 4: Data & Algorithmic Optimization
+
+Refactor sorting, searching, and filtering logic with efficient algorithms
+
+Implement caching or in‑memory indexing for frequently accessed data
+
+Demonstrate reduced query latency with metrics
+
+### Epic 5: Metrics Collection & Reporting
+
+Capture runtime metrics (latency, throughput, memory usage)
+
+Visualize results via logs, dashboards, or charts
+
+Document methodology, test results, and screenshots
+
+### Deliverables
+
+#### Optimized backend application with async and concurrent operations:
+
+Profiling results report (baseline vs. optimized metrics)
+Concurrency implementation using thread‑safe structures
+Algorithmic enhancements for faster data access
+Performance test suite (Postman/JMeter)
+Comprehensive technical documentation
+
+# Tech Stack
+
+Spring Boot 3.x (Web, JPA, Security, Async Support)
+
+Java 21
+
+## PostgreSQL
+
+###Profiling Tools: VisualVM, JProfiler, Java Flight Recorder
+
+Testing Tools: Postman, Apache JMeter
+
+## Lab Workflow
+
+Profile baseline performance → Identify bottlenecks in APIs
+
+Implement async operations → Refactor long‑running tasks
+
+Test concurrency → Simulate concurrent requests with Postman/JMeter
+
+Optimize algorithms → Improve sorting, searching, caching logic
+
+Collect metrics → Measure latency, throughput, memory usage
+
+Document results → Provide before/after comparisons with charts and screenshot
+
+# **Part 2**
+
+This project is also Java Spring Boot blogging platform that supports both REST APIs and GraphQL endpoints.
 It allows users to:
 
 Create, read, update, and delete blog posts
@@ -68,7 +165,7 @@ GraphQL Schema: Queries and mutations for all entities
  ## Running the Project
 
 bash
-git clone https://github.com/your-username/blogging-platform.git
+git clone https://github.com/your-username/blogging-platform8.git
 cd blogging-platform
 Configure your database in application.properties:
 
@@ -82,11 +179,11 @@ bash
 mvn spring-boot:run
 Access:
 
-REST APIs → http://localhost:8080/api/posts
+REST APIs → http://localhost:8081/api/posts
 
-Swagger UI → http://localhost:8080/swagger-ui.html
+Swagger UI → http://localhost:8081/swagger-ui.html
 
-GraphQL → http://localhost:8080/graphql
+GraphQL → http://localhost:8081/graphql
 
 
 
@@ -181,9 +278,7 @@ java
 @Profile("dev")
 public class DevConfig {
 
-
 ##  Dev-specific beans
-
 
 ## Activating Profiles
 Profiles can be activated via:
