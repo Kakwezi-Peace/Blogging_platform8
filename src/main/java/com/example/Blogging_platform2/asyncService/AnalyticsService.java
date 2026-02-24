@@ -46,6 +46,7 @@ public class AnalyticsService {
         });
     }
 
+    // another thread pool
     @Async("analyticsExecutor")
     public CompletableFuture<Map<String, Object>> getUserEngagementMetrics(Long userId) {
         logger.info("Fetching engagement metrics for user: {}", userId);
