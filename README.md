@@ -232,7 +232,6 @@ createdAt
 
  ## Error Handling
 
-
 PostNotFoundException → specific to posts
 
 Validation errors (e.g., rating must be between 1–5)
