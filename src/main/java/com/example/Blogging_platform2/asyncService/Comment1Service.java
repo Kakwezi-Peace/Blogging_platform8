@@ -13,7 +13,7 @@ public class Comment1Service {
 
     @Autowired
     private Comment1Repository commentRepository;
-
+//
     public CompletableFuture<List<Map<String, Object>>> getCommentsByPost(Long postId) {
         return commentRepository.findCommentsByPostId(postId);
     }
