@@ -12,7 +12,6 @@
         <version>3.2.2</version> <!-- latest stable Spring Boot 3.x -->
         <relativePath/>
     </parent>
-
     <groupId>com.example</groupId>
     <artifactId>Blogging_platform2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
