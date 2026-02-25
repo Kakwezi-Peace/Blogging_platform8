@@ -126,7 +126,6 @@ New-Item -Itemtype Directory -Path "$MAVEN_HOME_PARENT" -Force | Out-Null
 Write-Verbose "Couldn't find MAVEN_HOME, downloading and installing it ..."
 Write-Verbose "Downloading from: $distributionUrl"
 Write-Verbose "Downloading to: $TMP_DOWNLOAD_DIR/$distributionUrlName"
-
 $webclient = New-Object System.Net.WebClient
 if ($env:MVNW_USERNAME -and $env:MVNW_PASSWORD) {
   $webclient.Credentials = New-Object System.Net.NetworkCredential($env:MVNW_USERNAME, $env:MVNW_PASSWORD)
