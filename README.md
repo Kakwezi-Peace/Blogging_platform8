@@ -8,7 +8,6 @@ This lab focuses on improving the performance and scalability of the Blogging Pl
 The work includes profiling, asynchronous programming, concurrency control, and algorithmic optimization to ensure the system remains responsive under high load.
 
 # **Objectives**
-
 Implement asynchronous request handling with @Async, CompletableFuture, and ExecutorService
 
 Identify and resolve performance bottlenecks using profiling tools
