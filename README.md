@@ -74,8 +74,8 @@ Comprehensive technical documentation
 ![Threads.png](./images/Threads.png)
 ![Mon1.png](./images/Mon1.png)
 ![Mon2.png](./images/Mon2.png)
-
-
+![HttpRequest.png](./images/HttpRequests.png)
+![Aggregate_report.png](./images/Aggregate_report.png)
 # Tech Stack
 
 Spring Boot 3.x (Web, JPA, Security, Async Support)
