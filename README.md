@@ -70,6 +70,11 @@ Algorithmic enhancements for faster data access
 Performance test suite (Postman/JMeter)
 Comprehensive technical documentation
 
+## Images
+![Threads.png](./images/Threads.png)
+![Mon1.png](./images/Mon1.png)
+![Mon2.png](./images/Mon2.png)
+
 # Tech Stack
 
 Spring Boot 3.x (Web, JPA, Security, Async Support)
