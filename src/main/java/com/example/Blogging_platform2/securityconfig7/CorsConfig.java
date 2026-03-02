@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.cors.CorsConfigurationSource;
 
 import java.util.List;
 
@@ -12,27 +12,27 @@ import java.util.List;
 public class CorsConfig {
 
     @Bean
-    public CorsFilter corsFilter() {
+    public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
 
-        // ✅ Allowed origins (frontend apps)
+        // Allowed origins (frontend apps)
         config.setAllowedOrigins(List.of("http://localhost:3000", "http://localhost:8081"));
 
-        // ✅ Allowed methods
+        // Allowed methods
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 
-        // ✅ Allow all headers (not just Authorization & Content-Type)
+        // Allow all headers
         config.setAllowedHeaders(List.of("*"));
 
-        // ✅ Allow credentials (cookies, auth headers)
+        // Allow credentials (cookies, auth headers)
         config.setAllowCredentials(true);
 
-        // ✅ Expose headers if needed (e.g., Authorization in responses)
+        // Expose headers if needed (e.g., Authorization in responses)
         config.setExposedHeaders(List.of("Authorization"));
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
 
-        return new CorsFilter(source);
+        return source;
     }
 }

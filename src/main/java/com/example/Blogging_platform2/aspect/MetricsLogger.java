@@ -15,6 +15,7 @@ public class MetricsLogger {
 
     private final ConcurrentHashMap<String, PerformanceMetric> metrics = new ConcurrentHashMap<>();
 
+//Metrics Collection  using # tools like Jmeter andVisualVM & Reporting
     public void logPerformanceMetrics(String methodName, long executionTime, boolean success) {
         metrics.compute(methodName, (key, metric) -> {
             if (metric == null) {
@@ -28,6 +29,7 @@ public class MetricsLogger {
                 methodName, executionTime, success);
     }
 
+    //
     public void logMemoryUsage() {
         Runtime runtime = Runtime.getRuntime();
         long totalMemory = runtime.totalMemory();
@@ -51,6 +53,7 @@ public class MetricsLogger {
         private final AtomicLong totalExecutions = new AtomicLong(0);
         private final AtomicLong totalExecutionTime = new AtomicLong(0);
         private final AtomicLong successfulExecutions = new AtomicLong(0);
+
         private volatile long minExecutionTime = Long.MAX_VALUE;
         private volatile long maxExecutionTime = Long.MIN_VALUE;
 

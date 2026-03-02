@@ -11,12 +11,13 @@ import java.util.concurrent.Executor;
 @EnableAsync
 public class AsyncConfig {
 
+    //  thread pool configurations tested (core/max pool size)
     @Bean(name = "taskExecutor")
     public Executor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(4);
-        executor.setMaxPoolSize(8);
-        executor.setQueueCapacity(100);
+        executor.setCorePoolSize(4);//minimum threads
+        executor.setMaxPoolSize(8);// Maximum thread allowed
+        executor.setQueueCapacity(100);// tasks waiting in queue
         executor.setThreadNamePrefix("BlogAsync-");
         executor.initialize();
         return executor;
@@ -28,12 +29,10 @@ public class AsyncConfig {
         executor.setCorePoolSize(2);
         executor.setMaxPoolSize(4);
         executor.setQueueCapacity(50);
-
         executor.setThreadNamePrefix("Analytics-");
         executor.initialize();
         return executor;
     }
-
     @Bean(name = "notificationExecutor")
     public Executor notificationExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();

@@ -1,5 +1,4 @@
-// src/main/java/com/example/blogging_platform/asyncRepository/CommentRepository.java
-package com.example.blogging_platform.asyncRepository;
+package com.example.Blogging_platform2.asyncRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +11,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 @Repository
-public class CommentRepository {
+public class Comment1Repository {
 
-    private static final Logger logger = LoggerFactory.getLogger(CommentRepository.class);
+    private static final Logger logger = LoggerFactory.getLogger(Comment1Repository.class);
 
     // Thread-safe collections for concurrent access
     private final ConcurrentHashMap<Long, CopyOnWriteArrayList<Map<String, Object>>> commentsByPost
@@ -57,7 +56,6 @@ public class CommentRepository {
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
-
             commentData.put("id", random.nextLong(100000));
             commentData.put("postId", postId);
             commentData.put("timestamp", System.currentTimeMillis());
@@ -71,3 +69,4 @@ public class CommentRepository {
         });
     }
 }
+
